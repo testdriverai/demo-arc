@@ -38,12 +38,12 @@ jobs:
       - name: Display filename being tested
         run: |
           echo "Running job for file: ${{ matrix.test }}"
-      
+
       - uses: testdriverai/action@main
         with:
           key: ${{ secrets.TESTDRIVER_API_KEY }}
-          branch: profile-testdriverai
-          prompt: 1. /run testdriver/${{ matrix.test }} 
+          branch: inspect-testdriverai
+          prompt: 1. /run testdriver/${{ matrix.test }}
           prerun: |
             Get-NetIPAddress -AddressFamily IPv6
             # URL for the Arc browser installer
