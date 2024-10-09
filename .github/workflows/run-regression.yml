@@ -55,7 +55,8 @@ jobs:
             # Check if the download was successful
             if (Test-Path $installerPath) {
                 Write-Host "Download successful. Running the installer..."
-                Start-Process -FilePath $installerPath -ArgumentList '/silent' -Wait -Priority "BelowNormal"
+                $process = Start-Process -FilePath $installerPath -ArgumentList '/silent' -Wait
+                $process.PriorityClass = [System.Diagnostics.ProcessPriorityClass]::BelowNormal
                 Start-Sleep -Seconds 10
             } else {
                 Write-Host "Failed to download the Arc browser installer."
