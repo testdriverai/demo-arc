@@ -42,6 +42,7 @@ jobs:
       - uses: testdriverai/action@main
         with:
           key: ${{ secrets.TESTDRIVER_API_KEY }}
+          branch: profile-testdriverai
           prompt: 1. /run testdriver/${{ matrix.test }} 
           prerun: |
             Write-Host "Empty prerun"
