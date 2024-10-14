@@ -15,7 +15,9 @@ jobs:
       - uses: testdriverai/action@main
         with:
           key: ${{ secrets.TESTDRIVER_API_KEY }}
-          prompt: 1. /generate desktop
+          prompt: |
+            1. /run testdriver/onboarding.yml
+            2. /generate desktop 10
           prerun: |
             Get-NetIPAddress -AddressFamily IPv6
             # URL for the Arc browser installer
@@ -33,9 +35,12 @@ jobs:
             } else {
                 Write-Host "Failed to download the Arc browser installer."
             }
-
-            # Replace placeholder email with generated
-            (gc ./testdriver/onboarding.yml) -replace "placeholder@testdriver.ai", '${{ github.run_id }}-${{ github.run_attempt }}@testdriver.ai' | sc -Force ./testdriver/onboarding.yml
+            
+            # Get current timestamp in yyyyMMddHHmmss format
+            $timestamp = Get-Date -Format "yyyyMMddHHmmss"
+            
+            # Replace placeholder email with a unique email using timestamp
+            (gc ./testdriver/onboarding.yml) -replace "placeholder@testdriver.ai", "test-$timestamp@testdriver.ai" | sc -Force ./testdriver/onboarding.yml
           create-pr: true
           pr-title: "TestDriver.ai / Generate Test Plans"
           pr-branch: testdriver/generate-${{ github.run_id }}-${{ github.run_attempt }}
