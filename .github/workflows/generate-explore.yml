@@ -36,11 +36,8 @@ jobs:
                 Write-Host "Failed to download the Arc browser installer."
             }
             
-            # Get current timestamp in yyyyMMddHHmmss format
-            $timestamp = Get-Date -Format "yyyyMMddHHmmss"
-            
-            # Replace placeholder email with a unique email using timestamp
-            (gc ./testdriver/onboarding.yml) -replace "placeholder@testdriver.ai", "test-$timestamp@testdriver.ai" | sc -Force ./testdriver/onboarding.yml
+            # Replace placeholder email with generated
+            (gc ./testdriver/onboarding.yml) -replace "placeholder@testdriver.ai", '${{ github.run_id }}.${{ github.run_attempt }}@testdriver.ai' | sc -Force ./testdriver/onboarding.yml
           create-pr: true
           pr-title: "TestDriver.ai / Generate Test Plans"
           pr-branch: testdriver/generate-${{ github.run_id }}-${{ github.run_attempt }}
