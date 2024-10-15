@@ -63,7 +63,7 @@ jobs:
                 Write-Host "Failed to download the Arc browser installer."
             }
             # Replace placeholder email with generated
-            (gc ./testdriver/onboarding.yml) -replace "placeholder@testdriver.ai", '${{ github.run_id }}.${{ github.run_attempt }}@testdriver.ai' | sc -Force ./testdriver/onboarding.yml
+            (gc ./testdriver/onboarding.yml) -replace "placeholder@testdriver.ai", '${{ github.run_id }}${{ github.run_attempt }}.${{ matrix.markdown }}@testdriver.ai' | sc -Force ./testdriver/onboarding.yml
 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
