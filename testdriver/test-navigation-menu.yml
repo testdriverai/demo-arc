@@ -1,4 +1,4 @@
-version: 4.0.31
+version: 4.0.69
 steps:
   - prompt: click the right arrow in arc browser
     commands:
@@ -67,47 +67,3 @@ steps:
     commands:
       - command: focus-application
         name: Arc
-      - command: hover-text
-        text: Next
-        description: button to proceed
-        action: click
-        method: turbo
-  - prompt: enable arc max
-    commands:
-      - command: focus-application
-        name: Arc
-      - command: hover-text
-        text: Enable Arc Max
-        description: button to enable Arc Max
-        action: click
-        method: turbo
-  - prompt: click next
-    commands:
-      - command: focus-application
-        name: Arc
-      - command: hover-text
-        text: Next
-        description: button to proceed
-        action: click
-        method: turbo
-  - prompt: click next
-    commands:
-      - command: assert
-        expect: default app selection shows up
-  - prompt: focus arc again
-    commands:
-      - command: focus-application
-        name: Arc
-  - prompt: click get started
-    commands:
-      - command: focus-application
-        name: Arc
-      - command: hover-text
-        text: Get Started
-        description: button to get started in Arc
-        action: click
-        method: turbo
-  - prompt: click get started
-    commands:
-      - command: assert
-        expect: that arc browser launched
