@@ -16,7 +16,7 @@ jobs:
         with:
           key: ${{ secrets.TESTDRIVER_API_KEY }}
           prompt: |
-            1. /run testdriver/onboarding.yml
+            1. /run testdriver/onboarding.yml false false
             2. /generate desktop 10
           prerun: |
             Get-NetIPAddress -AddressFamily IPv6
