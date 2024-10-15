@@ -23,7 +23,7 @@ steps:
         action: click
         method: turbo
       - command: type
-        text: 11348679563.1@testdriver.ai
+        text: placeholder@testdriver.ai
       - command: hover-text
         text: Password
         description: password field in the form
