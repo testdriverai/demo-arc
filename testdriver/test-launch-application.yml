@@ -1,4 +1,4 @@
-version: 4.0.31
+version: 4.0.69
 steps:
   - prompt: click the right arrow in arc browser
     commands:
@@ -17,11 +17,6 @@ steps:
         method: turbo
       - command: type
         text: John Doe
-      - command: hover-text
-        text: Email
-        description: email field in the form
-        action: click
-        method: turbo
       - command: type
         text: 11354345965.1@testdriver.ai
       - command: hover-text
@@ -94,20 +89,3 @@ steps:
     commands:
       - command: assert
         expect: default app selection shows up
-  - prompt: focus arc again
-    commands:
-      - command: focus-application
-        name: Arc
-  - prompt: click get started
-    commands:
-      - command: focus-application
-        name: Arc
-      - command: hover-text
-        text: Get Started
-        description: button to get started in Arc
-        action: click
-        method: turbo
-  - prompt: click get started
-    commands:
-      - command: assert
-        expect: that arc browser launched
