@@ -1,4 +1,4 @@
-version: 4.0.31
+version: 4.0.69
 steps:
   - prompt: click the right arrow in arc browser
     commands:
@@ -23,7 +23,7 @@ steps:
         action: click
         method: turbo
       - command: type
-        text: placeholder@testdriver.ai
+        text: 11348679563.1@testdriver.ai
       - command: hover-text
         text: Password
         description: password field in the form
