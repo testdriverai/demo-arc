@@ -1,0 +1,42 @@
+version: 4.0.69
+steps:
+  - prompt: >-
+      complete the arc onboarding. when asked to log in, use the email
+      11354345965.1@testdriver.ai and password FakePassword123
+    commands:
+      - command: hover-text
+        text: →
+        description: arrow button to start onboarding
+        action: click
+  - prompt: >-
+      complete the arc onboarding. when asked to log in, use the email
+      11354345965.1@testdriver.ai and password FakePassword123
+    commands:
+      - command: hover-text
+        text: →
+        description: arrow button to proceed with onboarding
+        action: click
+  - prompt: >-
+      complete the arc onboarding. when asked to log in, use the email
+      11354345965.1@testdriver.ai and password FakePassword123
+    commands:
+      - command: hover-text
+        text: →
+        description: arrow button to proceed with onboarding
+        action: click
+      - command: hover-text
+        text: →
+        description: arrow button to proceed with onboarding
+        action: click
+  - prompt: >-
+      complete the arc onboarding. when asked to log in, use the email
+      11354345965.1@testdriver.ai and password FakePassword123
+    commands:
+      - command: hover-text
+        text: →
+        description: arrow button to proceed with onboarding
+        action: click
+      - command: hover-text
+        text: →
+        description: arrow button to proceed with onboarding
+        action: click
