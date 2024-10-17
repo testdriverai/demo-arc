@@ -1,0 +1,59 @@
+version: 4.0.69
+steps:
+  - prompt: click the right arrow in arc browser
+    commands:
+      - command: focus-application
+        name: Arc
+      - command: hover-image
+        description: right arrow button in the Arc browser
+        action: click
+        method: turbo
+  - prompt: >-
+      /explore complete the arc onboarding. when asked to log in, use the email
+      11354345965.1@testdriver.ai and password FakePassword123
+    commands:
+      - command: focus-application
+        name: Arc
+      - command: hover-text
+        text: Sign In
+        description: sign in link
+        action: click
+      - command: type
+        text: 11354345965.1@testdriver.ai
+      - command: press-keys
+        keys:
+          - tab
+      - command: type
+        text: FakePassword123
+      - command: press-keys
+        keys:
+          - enter
+  - prompt: >-
+      /explore complete the arc onboarding. when asked to log in, use the email
+      11354345965.1@testdriver.ai and password FakePassword123
+    commands:
+      - command: press-keys
+        keys:
+          - tab
+      - command: type
+        text: FakePassword123
+      - command: press-keys
+        keys:
+          - enter
+      - command: press-keys
+        keys:
+          - backspace
+      - command: type
+        text: 11354345965.1@testdriver.ai
+      - command: press-keys
+        keys:
+          - enter
+  - prompt: >-
+      /explore complete the arc onboarding. when asked to log in, use the email
+      11354345965.1@testdriver.ai and password FakePassword123
+    commands:
+      - command: press-keys
+        keys:
+          - tab
+          - tab
+          - backspace
