@@ -16,7 +16,7 @@ jobs:
         with:
           key: ${{ secrets.TESTDRIVER_API_KEY }}
           prompt: |
-            1. /run testdriver/onboarding.yml false false
+            1. /run testdriver/login.yml false false
             2. /generate desktop 10
           prerun: |
             Get-NetIPAddress -AddressFamily IPv6
@@ -36,8 +36,6 @@ jobs:
                 Write-Host "Failed to download the Arc browser installer."
             }
             
-            # Replace placeholder email with generated
-            (gc ./testdriver/onboarding.yml) -replace "placeholder@testdriver.ai", '${{ github.run_id }}${{ github.run_attempt }}.${{ matrix.markdown }}@testdriver.ai' | sc -Force ./testdriver/onboarding.yml
           create-pr: true
           pr-title: "TestDriver.ai / Generate Test Plans"
           pr-branch: testdriver/generate-${{ github.run_id }}-${{ github.run_attempt }}

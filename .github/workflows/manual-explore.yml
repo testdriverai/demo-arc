@@ -12,7 +12,7 @@ on:
         description: "Enter the prompt for TestDriver"
         required: true
         default: |
-          1. /run testdriver/onboarding.yml false false
+          1. /run testdriver/login.yml false false
           2. /generate desktop 10
 
 jobs:
