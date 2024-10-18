@@ -1,3 +1,4 @@
-1. /explore Focus on the search bar labeled "Search or Enter URL..."
-2. /explore Type "calculator".
-3. /explore Assert that relevant results appear.
+1. /explore Focus on the search bar.
+2. /explore Type "test query."
+3. /explore Press "Enter."
+4. /explore Assert that search results are displayed.
